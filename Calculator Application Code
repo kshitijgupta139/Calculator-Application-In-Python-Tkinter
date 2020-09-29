@@ -1,0 +1,113 @@
+Program Code:
+
+from tkinter import *
+
+root = Tk()
+root.geometry("350x500")
+root.title("Calculator")
+#root.wm_iconbitmap("cal.ico")# if you want to add pic on title bar then  download ico file and give the name of that file here
+root.configure(bg="light cyan")
+
+def click(event):
+    global screenValue
+    # event.widget give the value of that button where user clicked and cget() function get the text from button
+    buttonTxt = event.widget.cget("text")
+    if buttonTxt == " = ":
+        if screenValue.get().isdigit():
+            value = int(screenValue.get())
+        else:
+            value = eval(screenValue.get())
+        screenValue.set(value)
+        screenTxtBox.update()
+    elif buttonTxt == " clear ":
+        screenValue.set("")
+        screenTxtBox.update()
+    else:
+        # get value from button and set it on screen and the button text
+        screenValue.set(screenValue.get() + buttonTxt)
+        # force to update the screen value with new value
+        screenTxtBox.update()
+
+screenValue = StringVar()
+screenValue.set("")
+screenTxtBox = Entry(root,bg="white", textvariable=screenValue, font="calibri 25 bold",justify=RIGHT)
+screenTxtBox.pack(fill=X, pady=10, padx=10)
+
+buttonFrame = Frame(root,bg="light cyan",relief=SUNKEN)
+buttonFrame1 = Frame(root,bg="light cyan",relief=SUNKEN)
+buttonFrame2 = Frame(root,bg="light cyan",relief=SUNKEN)
+buttonFrame3 = Frame(root,bg="light cyan",relief=SUNKEN)
+buttonFrame4 = Frame(root,bg="light cyan",relief=SUNKEN)
+
+# Frame Button
+# divide Button
+divBtn = Button(buttonFrame, text=" / ", padx=15, pady=5, font="calibri 20 bold",relief=GROOVE)
+divBtn.pack(side=RIGHT,padx=8, pady=10,fill=BOTH)
+divBtn.bind("<Button-1>", click)
+
+# Frame 1 Button
+# Multiply Button
+mulBtn = Button(buttonFrame1, text=" * ", padx=15, pady=5, font="calibri 20 bold",relief=GROOVE)
+mulBtn.pack(side=RIGHT, padx=8, pady=10,fill=BOTH)
+mulBtn.bind("<Button-1>", click)
+
+# Frame 2 Button
+# Subtraction Button
+subBtn = Button(buttonFrame2, text=" - ", padx=18, pady=5, font="calibri 20 bold",relief=GROOVE)
+subBtn.pack(side=RIGHT,padx=8, pady=10,fill=BOTH)
+subBtn.bind("<Button-1>", click)
+
+# Frame 3 Button
+# Addition Button
+addBtn = Button(buttonFrame3, text=" + ", padx=15, pady=5, font="calibri 20 bold",relief=GROOVE)
+addBtn.pack(side=RIGHT,padx=5, pady=10,fill=BOTH)
+addBtn.bind("<Button-1>", click)
+# Zero Button
+zeroBtn = Button(buttonFrame3, text="0", padx=15, pady=5, font="calibri 20 bold",relief=GROOVE)
+zeroBtn.pack(side=LEFT, padx=6, pady=10,fill=BOTH)
+zeroBtn.bind("<Button-1>", click)
+# Point Button
+pointBtn = Button(buttonFrame3, text=".", padx=18, pady=5, font="calibri 20 bold",relief=GROOVE)
+pointBtn.pack(side=LEFT, padx=5, pady=10,fill=BOTH)
+pointBtn.bind("<Button-1>", click)
+# Double Zero Button
+doubleZBtn = Button(buttonFrame3, text="00", padx=8, pady=5, font="calibri 20 bold",relief=GROOVE)
+doubleZBtn .pack(side=LEFT, padx=8, pady=10,fill=BOTH)
+doubleZBtn .bind("<Button-1>", click)
+
+# for Number Buttons 9 to 1
+for btn in range(9, 0, -1):
+    # Frame Buttons
+    if btn > 6:
+        b1 = Button(buttonFrame, text=f"{btn}", padx=15, pady=5, font="calibri 20 bold",relief=GROOVE)
+        b1.pack(side=RIGHT, padx=5, pady=10,fill=BOTH)
+        b1.bind("<Button-1>",click)
+    # Frame 1 Buttons
+    elif btn <= 6 and btn > 3:
+        b1 = Button(buttonFrame1, text=f"{btn}", padx=15, pady=5, font="calibri 20 bold",relief=GROOVE)
+        b1.pack(side=RIGHT, padx=5, pady=10, fill=BOTH)
+        b1.bind("<Button-1>", click)
+    # Frame 2 Buttons
+    elif btn <= 3:
+        b1 = Button(buttonFrame2, text=f"{btn}", padx=15, pady=5, font="calibri 20 bold",relief=GROOVE)
+        b1.pack(side=RIGHT, padx=5, pady=10,fill=BOTH)
+        b1.bind("<Button-1>", click)
+
+# Frame 4 Buttons
+# Clear Button
+clearBtn = Button(buttonFrame4, text=" clear ", padx=15, pady=5, font="calibri 20 bold",relief=GROOVE)
+clearBtn .pack(side=LEFT, padx=15, pady=10,fill=BOTH)
+clearBtn .bind("<Button-1>", click)
+# Equal Button
+clearBtn = Button(buttonFrame4, text=" = ", padx=55, pady=5, font="calibri 20 bold",relief=GROOVE)
+clearBtn .pack(side=LEFT, padx=15, pady=10, fill=BOTH)
+clearBtn .bind("<Button-1>", click)
+
+
+buttonFrame.pack()
+buttonFrame1.pack()
+buttonFrame2.pack()
+buttonFrame3.pack()
+buttonFrame4.pack()
+
+root.mainloop()
