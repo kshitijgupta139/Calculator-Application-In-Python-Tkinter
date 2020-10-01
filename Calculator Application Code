@@ -1,4 +1,4 @@
-Program Code:
+# Program Code:
 
 from tkinter import *
 
@@ -41,37 +41,37 @@ buttonFrame4 = Frame(root,bg="light cyan",relief=SUNKEN)
 
 # Frame Button
 # divide Button
-divBtn = Button(buttonFrame, text=" / ", padx=15, pady=5, font="calibri 20 bold",relief=GROOVE)
+divBtn = Button(buttonFrame, text=" / ", padx=15, pady=5, font="calibri 20 bold",relief=GROOVE,bg='light grey')
 divBtn.pack(side=RIGHT,padx=8, pady=10,fill=BOTH)
 divBtn.bind("<Button-1>", click)
 
 # Frame 1 Button
 # Multiply Button
-mulBtn = Button(buttonFrame1, text=" * ", padx=15, pady=5, font="calibri 20 bold",relief=GROOVE)
+mulBtn = Button(buttonFrame1, text=" * ", padx=15, pady=5, font="calibri 20 bold",relief=GROOVE,bg='light grey')
 mulBtn.pack(side=RIGHT, padx=8, pady=10,fill=BOTH)
 mulBtn.bind("<Button-1>", click)
 
 # Frame 2 Button
 # Subtraction Button
-subBtn = Button(buttonFrame2, text=" - ", padx=18, pady=5, font="calibri 20 bold",relief=GROOVE)
+subBtn = Button(buttonFrame2, text=" - ", padx=18, pady=5, font="calibri 20 bold",relief=GROOVE,bg='light grey')
 subBtn.pack(side=RIGHT,padx=8, pady=10,fill=BOTH)
 subBtn.bind("<Button-1>", click)
 
 # Frame 3 Button
 # Addition Button
-addBtn = Button(buttonFrame3, text=" + ", padx=15, pady=5, font="calibri 20 bold",relief=GROOVE)
+addBtn = Button(buttonFrame3, text=" + ", padx=15, pady=5, font="calibri 20 bold",relief=GROOVE,bg='light grey')
 addBtn.pack(side=RIGHT,padx=5, pady=10,fill=BOTH)
 addBtn.bind("<Button-1>", click)
 # Zero Button
-zeroBtn = Button(buttonFrame3, text="0", padx=15, pady=5, font="calibri 20 bold",relief=GROOVE)
+zeroBtn = Button(buttonFrame3, text="0", padx=15, pady=5, font="calibri 20 bold",relief=GROOVE,bg='light grey')
 zeroBtn.pack(side=LEFT, padx=6, pady=10,fill=BOTH)
 zeroBtn.bind("<Button-1>", click)
 # Point Button
-pointBtn = Button(buttonFrame3, text=".", padx=18, pady=5, font="calibri 20 bold",relief=GROOVE)
+pointBtn = Button(buttonFrame3, text=".", padx=18, pady=5, font="calibri 20 bold",relief=GROOVE,bg='light grey')
 pointBtn.pack(side=LEFT, padx=5, pady=10,fill=BOTH)
 pointBtn.bind("<Button-1>", click)
 # Double Zero Button
-doubleZBtn = Button(buttonFrame3, text="00", padx=8, pady=5, font="calibri 20 bold",relief=GROOVE)
+doubleZBtn = Button(buttonFrame3, text="00", padx=8, pady=5, font="calibri 20 bold",relief=GROOVE,bg='light grey')
 doubleZBtn .pack(side=LEFT, padx=8, pady=10,fill=BOTH)
 doubleZBtn .bind("<Button-1>", click)
 
@@ -79,27 +79,27 @@ doubleZBtn .bind("<Button-1>", click)
 for btn in range(9, 0, -1):
     # Frame Buttons
     if btn > 6:
-        b1 = Button(buttonFrame, text=f"{btn}", padx=15, pady=5, font="calibri 20 bold",relief=GROOVE)
+        b1 = Button(buttonFrame, text=f"{btn}", padx=15, pady=5, font="calibri 20 bold",relief=GROOVE,bg='light grey')
         b1.pack(side=RIGHT, padx=5, pady=10,fill=BOTH)
         b1.bind("<Button-1>",click)
     # Frame 1 Buttons
     elif btn <= 6 and btn > 3:
-        b1 = Button(buttonFrame1, text=f"{btn}", padx=15, pady=5, font="calibri 20 bold",relief=GROOVE)
+        b1 = Button(buttonFrame1, text=f"{btn}", padx=15, pady=5, font="calibri 20 bold",relief=GROOVE,bg='light grey')
         b1.pack(side=RIGHT, padx=5, pady=10, fill=BOTH)
         b1.bind("<Button-1>", click)
     # Frame 2 Buttons
     elif btn <= 3:
-        b1 = Button(buttonFrame2, text=f"{btn}", padx=15, pady=5, font="calibri 20 bold",relief=GROOVE)
+        b1 = Button(buttonFrame2, text=f"{btn}", padx=15, pady=5, font="calibri 20 bold",relief=GROOVE,bg='light grey')
         b1.pack(side=RIGHT, padx=5, pady=10,fill=BOTH)
         b1.bind("<Button-1>", click)
 
 # Frame 4 Buttons
 # Clear Button
-clearBtn = Button(buttonFrame4, text=" clear ", padx=15, pady=5, font="calibri 20 bold",relief=GROOVE)
+clearBtn = Button(buttonFrame4, text=" clear ", padx=15, pady=5, font="calibri 20 bold",relief=GROOVE,bg='light grey')
 clearBtn .pack(side=LEFT, padx=15, pady=10,fill=BOTH)
 clearBtn .bind("<Button-1>", click)
 # Equal Button
-clearBtn = Button(buttonFrame4, text=" = ", padx=55, pady=5, font="calibri 20 bold",relief=GROOVE)
+clearBtn = Button(buttonFrame4, text=" = ", padx=55, pady=5, font="calibri 20 bold",relief=GROOVE,bg='light grey')
 clearBtn .pack(side=LEFT, padx=15, pady=10, fill=BOTH)
 clearBtn .bind("<Button-1>", click)
 
